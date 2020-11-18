@@ -26,8 +26,8 @@
 	<br>
 	<div class="container">
 		<div class="jumbotron">
-			<h1 class="display-4">삐따기 세상</h1>
-			<p class="lead">새로운 생각, 새로운 사람과 함께 합니다.</p>
+			<h1 class="display-4">오묘한맛's 블로그</h1>
+			<p class="lead">안녕하세요 오묘한맛의 블로그입니다.</p>
 		</div>
 		<div class="container">
 		<div class="col-lg-4"></div>

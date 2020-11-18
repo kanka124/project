@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!doctype html>
-<html lang="en">
+<html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport"
@@ -35,9 +35,19 @@
 }
 </style>
 <!-- Custom styles for this template -->
-<link href="./css/album.css" rel="stylesheet">
+<link href="css/album.css" rel="stylesheet">
 </head>
 <body>
+
+<%
+	//로긴 한사람이면 userID라는 변수에 해당 아이디가 담기고 그렇지 않으면 null값
+	
+		String userID = null;
+		if (session.getAttribute("userID") != null) {
+			userID = (String) session.getAttribute("userID");
+		}
+	%>
+
 	<header>
 		<div class="collapse bg-dark" id="navbarHeader">
 			<div class="container">
@@ -50,12 +60,12 @@
 					<div class="col-sm-4 offset-md-1 py-4">
 						<h4 class="text-white">메뉴</h4>
 						<ul class="list-unstyled">
-							<li><a href="#" class="text-white">개인적인 생각</a></li>
-							<li><a href="#" class="text-white">게임 게시판</a></li>
-							<li><a href="#" class="text-white">스포츠 게시판</a></li>
-							<li><a href="#" class="text-white">먹씨 게시판</a></li>
-							<li><a href="#" class="text-white">포트 폴리오</a></li>
-							<li><a href="#" class="text-white">방명록</a></li>
+							<li><a href="mybbs.jsp" class="text-white">개인적인 생각</a></li>
+							<li><a href="gamebbs.jsp" class="text-white">게임 게시판</a></li>
+							<li><a href="sportsbbs.jsp" class="text-white">스포츠 게시판</a></li>
+							<li><a href="eatbbs.jsp" class="text-white">맛집 후기 게시판</a></li>
+							<li><a href="portbbs.jsp" class="text-white">포트 폴리오</a></li>
+							
 						</ul>
 					</div>
 				</div>
@@ -107,7 +117,7 @@
 								<p class="card-text">그냥 저의 개인적인 생각을 적어보는 게시판입니다.</p>
 								<div class="d-flex justify-content-between align-items-center">
 									<div class="btn-group">
-										<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+										<button type="button" class="btn btn-sm btn-outline-secondary" onclick="location='mybbs.jsp'">View</button>
 
 									</div>
 
@@ -127,7 +137,7 @@
 								<p class="card-text">제가 플레이하는 게임 소개및 리뷰같은 적는 게시판입니다.</p>
 								<div class="d-flex justify-content-between align-items-center">
 									<div class="btn-group">
-										<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+										<button type="button" class="btn btn-sm btn-outline-secondary" onclick="location='gamebbs.jsp'">View</button>
 
 									</div>
 
@@ -148,7 +158,7 @@
 									배구도 재밌게 보게된다면 추가될거같습니다.</p>
 								<div class="d-flex justify-content-between align-items-center">
 									<div class="btn-group">
-										<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+										<button type="button" class="btn btn-sm btn-outline-secondary" onclick="location='sportsbbs.jsp'">View</button>
 
 									</div>
 
@@ -163,13 +173,13 @@
 								height="225" src="./images/ramen.jpg"
 								preserveAspectRatio="xMidYMid slice" focusable="false"
 								role="img" aria-label="Placeholder: Thumbnail" />
-							<title>먹씨 게시판</title>
+							<title>맛집 후기 게시판</title>
 							<rect width="100%" height="100%" fill="#55595c" />
 							<div class="card-body">
 								<p class="card-text">맛집에서 먹은 음식들 리뷰 및 사진을 찍은 게시판입니다.</p>
 								<div class="d-flex justify-content-between align-items-center">
 									<div class="btn-group">
-										<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+										<button type="button" class="btn btn-sm btn-outline-secondary" onclick="location='eatbbs.jsp'">View</button>
 
 									</div>
 
@@ -189,7 +199,7 @@
 								<p class="card-text">저의 포트폴리오 정리한 게시판입니다.</p>
 								<div class="d-flex justify-content-between align-items-center">
 									<div class="btn-group">
-										<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+										<button type="button" class="btn btn-sm btn-outline-secondary" onclick="location='portbbs.jsp'">View</button>
 
 									</div>
 
